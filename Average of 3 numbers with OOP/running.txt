@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+public class running {
+    public static void main(String[] args){
+        Scanner scan = new Scanner(System.in);
+
+
+        System.out.println("Enter your first,second and third number:");
+        Average avg = new Average(scan.nextDouble(), scan.nextDouble(), scan.nextDouble());
+        System.out.println("The average of above three numbers is:"+avg.average());
+
+
+
+    }
+}
