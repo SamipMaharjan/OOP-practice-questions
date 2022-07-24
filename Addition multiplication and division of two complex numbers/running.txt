@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class running {
+    public static void main(String[] args){
+        Scanner scan = new Scanner(System.in);
+        Complex Cnumbers1 = new Complex();
+
+        System.out.println("Enter the real part of your first complex number:");
+        Cnumbers1.setRealNum1(scan.nextDouble());
+
+        System.out.println("Enter the imaginary part of your first complex number:");
+        Cnumbers1.setImaginaryNum1(scan.nextDouble());
+
+
+        System.out.println("Enter the real part of your second complex number:");
+        Cnumbers1.setRealNum2(scan.nextDouble());
+
+        System.out.println("Enter the imaginary part of your second complex number:");
+        Cnumbers1.setImaginaryNum2(scan.nextDouble());
+
+        System.out.println("Sum of your complex numbers is:");
+        System.out.println(Cnumbers1.addition());
+
+        System.out.println("Multiplication of your complex numbers is:");
+        System.out.println((Cnumbers1.multiplication()));
+
+        System.out.println("Division of your complex numbers is:");
+        System.out.println((Cnumbers1.division()));
+
+
+    }
+}

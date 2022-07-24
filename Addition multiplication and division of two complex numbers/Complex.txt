@@ -1,0 +1,42 @@
+public class Complex{
+    double realNum1;
+    double imaginaryNum1;
+    double realNum2;
+    double imaginaryNum2;
+
+    public String addition(){
+        double realSum = realNum1+realNum2;
+        double imaginarySum = imaginaryNum1+imaginaryNum2;
+        return "("+realSum+")"+ " + "+"("+imaginarySum+"i)";
+    }
+    public String multiplication(){
+        double realMultiplication = (realNum1*realNum2 - imaginaryNum1*imaginaryNum2);
+        double imaginaryMultiplication = (realNum1*imaginaryNum2 + realNum2*imaginaryNum1);
+        return "("+realMultiplication+")"+" + "+"("+imaginaryMultiplication+"i)";
+    }
+
+    public String division(){
+    double realMultiplication = ( realNum1*realNum2 + imaginaryNum1*imaginaryNum2 );
+    double imaginaryMultiplication = ( realNum2*imaginaryNum1 - realNum1*imaginaryNum2);
+    double denominator = realNum2*realNum2 + imaginaryNum1*imaginaryNum2;
+    return "("+realMultiplication+")"+" + "+"("+imaginaryMultiplication+"i)/"+denominator+"";
+}
+
+
+
+    public void setRealNum1(double realNum1) {
+        this.realNum1 = realNum1;
+    }
+
+    public void setImaginaryNum1(double imaginaryNum1) {
+        this.imaginaryNum1 = imaginaryNum1;
+    }
+
+    public void setRealNum2(double realNum2) {
+        this.realNum2 = realNum2;
+    }
+
+    public void setImaginaryNum2(double imaginaryNum2) {
+        this.imaginaryNum2 = imaginaryNum2;
+    }
+}
