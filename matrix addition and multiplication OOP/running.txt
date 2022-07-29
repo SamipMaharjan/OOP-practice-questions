@@ -1,0 +1,71 @@
+import java.util.Scanner;
+
+public class running {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter the number of rows and " +
+                "columns you want in your 1st matrix::");
+        Matrix matrix1 = new Matrix(scan.nextInt(), scan.nextInt());
+         matrix1.getRowsNColumns();
+        System.out.println("Enter the number of rows and " +
+                "columns you want in your 2nd matrix::");
+        Matrix matrix2 = new Matrix(scan.nextInt(), scan.nextInt());
+        matrix2.getRowsNColumns();
+        matrix1.displayMatrix();
+        System.out.println("\n");
+        matrix2.displayMatrix();
+
+        Matrix matrix3 = new Matrix(matrix1.rows, matrix1.columns);
+
+        if (matrix1.rows == matrix2.rows && matrix1.columns == matrix2.columns) {
+            for(int i = 0; i< matrix1.rows;i++){
+                for(int j = 0;j< matrix2.columns; j++){
+                  matrix3.addMatrix(i,j,matrix1.matrix[i][j],matrix2.matrix[i][j]);
+                }
+            }
+            System.out.println("The sum of your two matrices are::");
+            matrix3.displayMatrix();
+        }
+        else
+            System.out.println("The two matrices are not addable.");
+
+
+        if(matrix1.rows * matrix1.columns == 1){
+            Matrix matrix4 = new Matrix(matrix2.rows,matrix2.columns);
+            for(int i = 0; i< matrix2.rows;i++){
+                for(int j  = 0; j< matrix2.columns;j++){
+                 matrix4.multiplyMatix(i,j,matrix1.matrix[0][0],matrix2.matrix[i][j]);
+            }
+            }
+            matrix4.displayMatrix();
+        }
+
+        else if(matrix2.rows * matrix2.columns == 1){
+            Matrix matrix4 = new Matrix(matrix1.rows,matrix1.columns);
+            for(int i = 0; i< matrix1.rows;i++){
+                for(int j  = 0; j< matrix1.columns;j++){
+                    matrix4.multiplyMatix(i,j,matrix2.matrix[0][0],matrix1.matrix[i][j]);
+                }
+            }
+            matrix4.displayMatrix();
+        }
+
+        else if(matrix1.columns == matrix2.rows){
+            Matrix matrix4 = new Matrix(matrix1.rows,matrix2.columns);
+            for(int i = 0; i< matrix1.rows; i++){
+                for(int l = 0; l< matrix2.columns;l++){
+                    for(int j = 0; j<matrix1.columns;j++){
+                        matrix4.multiplyComplexMatrix(i,l,matrix1.matrix[i][j],matrix2.matrix[j][l]);
+                    }
+
+                }
+            }
+            matrix4.displayMatrix();
+        }
+
+
+
+
+    }
+}
+

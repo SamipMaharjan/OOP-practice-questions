@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class Matrix {
+    Scanner scan = new Scanner(System.in);
+
+    int rows=100;
+    int columns=100;
+    int[][] matrix = new int[rows][columns];
+    public Matrix(int row, int column) {
+        this.rows = row;
+        this.columns = column;
+    }
+
+    public void getRowsNColumns() {
+        Scanner scan = new Scanner(System.in);
+        System.out.println(rows+" "+columns);
+        for (int i = 0; i < this.rows; i++) {
+            for (int j = 0; j < this.columns; j++) {
+                System.out.println("Enter value for" + (i + 1) + "th row and"+(j + 1) + "th column");
+                this.matrix[i][j] = scan.nextInt();
+            }
+        }
+    }
+    public void displayMatrix(){
+        for (int i = 0; i < this.rows; i++) {
+            for (int j = 0; j < this.columns; j++) {
+                System.out.print(this.matrix[i][j]+"   ");
+            }
+            System.out.print("\n");
+        }
+    }
+    public void addMatrix(int i,int j,int Value1,int Value2){
+        matrix[i][j] = Value1 + Value2;
+    }
+
+    public void multiplyMatix(int i,int j, int Value1,int Value2){
+        matrix[i][j] = Value1*Value2;
+    }
+
+    public void multiplyComplexMatrix(int i, int l,int Value1, int Value2){
+        matrix[i][l] = Value1 * Value2+ matrix[i][l];
+    }
+
+}
+
